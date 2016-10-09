@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
       <h1>404: page missing</h1>
     </div>
   `
+
 })
 export class NoContent {
 
