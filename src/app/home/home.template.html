@@ -1,41 +1,29 @@
-<div class="card-container">
-  <h1 x-large class="sample-content">Your Content Here</h1>
-
-  <div>
-    For material design components use the <a href="https://github.com/AngularClass/angular2-webpack-starter/tree/material2"><b>material2</b></a> branch
+<div class="jumbotron home">
+  <div class="container text-left">
+    <h2>EIT and hiker</h2>
+    <p>A computer engineering graduate, working as a web developer</p>
   </div>
-
-  <hr>
-
-  <div>
-    For hot module reloading run test test
-    <pre>npm run start:hmr</pre>
-  </div>
-
-  <hr>
-
-  <div>
-    <h4>Local State</h4>
-
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-
-      <input
-        [value]="localState.value"
-        (input)="localState.value = $event.target.value"
-        placeholder="Submit Local State to App State"
-        autofocus>
-
-      <button md-raised-button color="primary">Submit Value</button>
-    </form>
-    <!--
-        <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
-        Rather than wiring up two-way data-binding ourselves with [value] and (input)
-        we can use Angular's [(ngModel)] syntax
-        <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
-      -->
-
-    <pre>this.localState = {{ localState | json }}</pre>
-
-  </div>
-
 </div>
+
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="thumbnail" [routerLink]="['/home']">
+        <img src="/assets/img/SolarCarResized-small.jpg" class="img-responsive" style="width:100%" alt="Image">
+        <h2>Projects</h2>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail" [routerLink]="['/detail']">
+        <img src="/assets/img/HikeCropped-small.jpg" class="img-responsive" style="width:100%" alt="Image">
+        <h2>Hobbies</h2>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail" [routerLink]="['/about']">
+        <img src="/assets/img/ContactMe-small.jpg" class="img-responsive" style="width:100%" alt="Image">
+        <h2>Contact Me</h2>
+      </div>
+    </div>
+  </div>
+</div><br>

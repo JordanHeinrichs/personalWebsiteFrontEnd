@@ -6,8 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./menubar.component.css']
 })
 export class Menubar {
-
-  ngOnInit() {
-  }
-
 }

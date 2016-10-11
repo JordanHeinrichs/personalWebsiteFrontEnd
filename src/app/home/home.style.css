@@ -1,1 +1,26 @@
 /*styles for home content only*/
+
+.jumbotron.home {
+   background-image: url('/assets/img/home-page.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   color: white;
+   height: 500px;
+   position: relative;
+   border-radius: 0 !important;
+}
+
+.jumbotron.home .container {
+   bottom: 100px;
+   left: 50px;
+   position: absolute;
+}
+
+.row-centered {
+   text-align:center;
+}
+
+.thumbnail {
+   cursor: pointer;
+}
