@@ -6,8 +6,6 @@ import { ActivatedRoute } from '@angular/router';
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`About` component loaded asynchronously');
-
 @Component({
   selector: 'about',
   styles: [`
@@ -46,15 +44,6 @@ export class About {
     // you can also async load mock data with 'es6-promise-loader'
     // you would do this if you don't want the mock-data bundled
     // remember that 'es6-promise-loader' is a promise
-    setTimeout(() => {
-
-      System.import('../../assets/mock-data/mock-data.json')
-        .then(json => {
-          console.log('async mockData', json);
-          this.localState = json;
-        });
-
-    });
   }
 
 }

@@ -17,8 +17,8 @@ import { AppState, InteralStateType } from './app.service';
 import { Home } from './home';
 import { About } from './about';
 import { NoContent } from './no-content';
-import { XLarge } from './home/x-large';
 import { Menubar } from './menubar';
+import { Projects } from './projects';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -42,8 +42,8 @@ type StoreType = {
     About,
     Home,
     NoContent,
-    XLarge,
-    Menubar
+    Menubar,
+    Projects
   ],
   imports: [ // import Angular's modules
     BrowserModule,
