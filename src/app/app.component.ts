@@ -19,13 +19,6 @@ import { Menubar } from './menubar/';
   templateUrl: './app.component.html'
 })
 export class App {
-  url = 'http://jordanheinrichs.com';
-
-  constructor(
-    public appState: AppState) {
-  }
-
-  ngOnInit() {
-  }
+  constructor() {}
 
 }

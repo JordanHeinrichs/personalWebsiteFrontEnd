@@ -12,24 +12,15 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { App } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InteralStateType } from './app.service';
+import { ContactMe } from './contact-me';
+import { Hobbies, HobbiesService } from './hobbies';
 import { Home } from './home';
-import { About } from './about';
-import { NoContent } from './no-content';
-import { Menubar } from './menubar';
-import { Projects } from './projects';
-import { Hobbies } from './hobbies';
 import { ItemSelector } from './itemselector';
-
-// Application wide providers
-const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
-  AppState
-];
+import { Menubar } from './menubar';
+import { NoContent } from './no-content';
+import { Projects, ProjectService } from './projects';
 
 type StoreType = {
-  state: InteralStateType,
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };
@@ -41,13 +32,13 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-    About,
+    ContactMe
+    Hobbies,
     Home,
-    NoContent,
-    Menubar,
-    Projects,
     ItemSelector,
-    Hobbies
+    Menubar,
+    NoContent,
+    Projects,
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -56,18 +47,15 @@ type StoreType = {
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
+    ProjectService,
+    HobbiesService,
     ENV_PROVIDERS,
-    APP_PROVIDERS
   ]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef, public appState: AppState) {}
+  constructor(public appRef: ApplicationRef) {}
 
   hmrOnInit(store: StoreType) {
-    if (!store || !store.state) return;
-    console.log('HMR store', JSON.stringify(store, null, 2));
-    // set state
-    this.appState._state = store.state;
     // set input values
     if ('restoreInputValues' in store) {
       let restoreInputValues = store.restoreInputValues;
@@ -75,15 +63,11 @@ export class AppModule {
     }
 
     this.appRef.tick();
-    delete store.state;
     delete store.restoreInputValues;
   }
 
   hmrOnDestroy(store: StoreType) {
     const cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
-    // save state
-    const state = this.appState._state;
-    store.state = state;
     // recreate root elements
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // save input values

@@ -1,5 +1,5 @@
 {
-  "name": "angular2-webpack-starter",
+  "name": "PersonalWebsiteAndBlog",
   "version": "5.0.5",
   "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
   "keywords": [
@@ -7,8 +7,8 @@
     "webpack",
     "typescript"
   ],
-  "author": "Patrick Stapleton <patrick@angularclass.com>",
-  "homepage": "https://github.com/angularclass/angular2-webpack-starter",
+  "author": "Jordan Heinrichs <mail@jordanheinrichs.com>",
+  "homepage": "http://jordanheinrichs.com",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",

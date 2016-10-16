@@ -1,17 +1,16 @@
 import { Routes, RouterModule } from '@angular/router';
-import { Home } from './home';
 import { About } from './about';
-import { Projects } from './projects';
+import { ContactMe } from './contact-me';
 import { Hobbies } from './hobbies';
+import { Home } from './home';
 import { NoContent } from './no-content';
-
-import { DataResolver } from './app.resolver';
-
+import { Projects } from './projects';
 
 export const ROUTES: Routes = [
    { path: '',      component: Home },
    { path: 'home',  component: Home },
    { path: 'projects', component: Projects },
    { path: 'hobbies', component: Hobbies },
+   { path: 'contact-me', component: ContactMe },
    { path: '**',    component: NoContent },
 ];
