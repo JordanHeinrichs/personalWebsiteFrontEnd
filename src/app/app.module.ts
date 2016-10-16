@@ -19,6 +19,8 @@ import { About } from './about';
 import { NoContent } from './no-content';
 import { Menubar } from './menubar';
 import { Projects } from './projects';
+import { Hobbies } from './hobbies';
+import { ItemSelector } from './itemselector';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -43,7 +45,9 @@ type StoreType = {
     Home,
     NoContent,
     Menubar,
-    Projects
+    Projects,
+    ItemSelector,
+    Hobbies
   ],
   imports: [ // import Angular's modules
     BrowserModule,
