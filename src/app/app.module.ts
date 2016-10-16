@@ -32,13 +32,13 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-    ContactMe
+    ContactMe,
     Hobbies,
     Home,
     ItemSelector,
     Menubar,
     NoContent,
-    Projects,
+    Projects
   ],
   imports: [ // import Angular's modules
     BrowserModule,

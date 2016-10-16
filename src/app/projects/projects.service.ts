@@ -6,9 +6,9 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class ProjectService {
-   constructor(private http: Http) {}
    private projectListUrl = AppSettings.API_ENDPOINT + 'projects';
    private projectUrl = AppSettings.API_ENDPOINT + 'project/';
+   constructor(private http: Http) {}
 
    projectList(): Promise<ItemChoice[]> {
       return this.http

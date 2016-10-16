@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { ItemChoice } from './itemchoice'
+import { ItemChoice } from './itemchoice';
 
 @Component({
   selector: 'item-selector',

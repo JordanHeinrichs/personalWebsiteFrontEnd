@@ -1,4 +1,4 @@
-import { ItemChoice } from '../itemchoice'
+import { ItemChoice } from '../itemchoice';
 
 export const ITEMS: ItemChoice[] = [
   { name: 'Name1', src: 'picture1' },

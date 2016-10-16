@@ -6,9 +6,9 @@ import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class HobbiesService {
-   constructor(private http: Http) {}
    private hobbyListUrl = AppSettings.API_ENDPOINT + 'hobbies';
    private hobbyUrl = AppSettings.API_ENDPOINT + 'hobby/';
+   constructor(private http: Http) {}
 
    hobbyList(): Promise<ItemChoice[]> {
       return this.http
