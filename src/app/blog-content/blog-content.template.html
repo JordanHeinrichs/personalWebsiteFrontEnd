@@ -1,0 +1,9 @@
+<item-selector [choices]="blogList"
+               (onSelected)="onChoiceSelected($event)">
+</item-selector>
+<div class="container-fixed">
+   <div class="row">
+      <div class="col-md-8 col-md-offset-2" [innerHTML]="blogHtml">
+      </div>
+   </div>
+</div>

@@ -13,12 +13,13 @@ import { ROUTES } from './app.routes';
 // App is our top level component
 import { App } from './app.component';
 import { ContactMe } from './contact-me';
-import { Hobbies, HobbiesService } from './hobbies';
+import { Hobbies, HobbiesUrlService } from './hobbies';
 import { Home } from './home';
 import { ItemSelector } from './itemselector';
 import { Menubar } from './menubar';
 import { NoContent } from './no-content';
-import { Projects, ProjectService } from './projects';
+import { Projects, ProjectsUrlService } from './projects';
+import { BlogContent, BlogContentService, BlogUrlService } from './blog-content';
 
 type StoreType = {
   restoreInputValues: () => void,
@@ -38,7 +39,8 @@ type StoreType = {
     ItemSelector,
     Menubar,
     NoContent,
-    Projects
+    Projects,
+    BlogContent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -47,8 +49,6 @@ type StoreType = {
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
-    ProjectService,
-    HobbiesService,
     ENV_PROVIDERS,
   ]
 })

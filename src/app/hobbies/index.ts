@@ -1,2 +1,2 @@
 export * from './hobbies.component';
-export * from './hobbies.service';
+export * from './hobbies-url-route.service';

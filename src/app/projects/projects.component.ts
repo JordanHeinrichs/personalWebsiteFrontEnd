@@ -1,32 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ItemSelector, ItemChoice } from './../itemselector';
-import { ProjectService } from './projects.service';
+import { Component } from '@angular/core';
+import { ProjectsUrlService } from './projects-url-route.service';
+import { BlogUrlService } from './../blog-content';
 
 @Component({
    selector: 'projects',
-   templateUrl: './projects.template.html'
+   templateUrl: './projects.template.html',
+   providers: [{provide: BlogUrlService, useClass: ProjectsUrlService}]
 })
-export class Projects implements OnInit {
-   projects: ItemChoice[];
-   projectHtml: string;
-
-   constructor(private projectService: ProjectService) {
-      this.projects = null;
-      this.projectHtml = '';
-   }
-
-   ngOnInit(): void {
-      this.projectService.projectList()
-         .then(projectList => this.projects = projectList)
-         .then(projectList => {
-            // Always load the last project
-            this.onProjectSelected(projectList[projectList.length - 1]);
-         });
-   }
-
-   onProjectSelected(item: ItemChoice) {
-      this.projectService.project(item.name)
-         .then(blog => this.projectHtml = blog)
-         .catch((error: any) => this.projectHtml = 'Error: can not load project.' );
-   }
+export class Projects  {
 }
