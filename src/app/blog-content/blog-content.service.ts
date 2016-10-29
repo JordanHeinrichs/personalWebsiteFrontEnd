@@ -12,13 +12,24 @@ export class BlogContentService {
       return this.http
          .get(this.blogUrl.blogList())
          .toPromise()
-         .then(res => res.json());
+         .then(res => {
+            let itemChoices: ItemChoice[] = [];
+            const json = res.json();
+            Object.keys(json).forEach( (key) => {
+               itemChoices.push({
+                  name: key,
+                  title: json[key].title,
+                  src: json[key].src
+               });
+            });
+            return itemChoices;
+         });
    };
 
    blog(name: string): Promise<string> {
       return this.http
          .get(this.blogUrl.blog() + name)
          .toPromise()
-         .then(res => res.json());
+         .then(res => res.text());
    }
 }

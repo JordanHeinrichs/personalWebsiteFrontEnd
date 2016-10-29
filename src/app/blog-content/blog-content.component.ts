@@ -26,7 +26,7 @@ export class BlogContent implements OnInit {
       this.route.params.forEach((params: Params) => {
          this.blogNameParam = params['name'];
          if (this.blogNameParam) {
-            const item: ItemChoice = {name: this.blogNameParam, src: null};
+            const item: ItemChoice = {name: this.blogNameParam, title: 'default', src: null};
             this.onChoiceSelected(item);
          }
       });
