@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./menubar.component.css']
 })
 export class Menubar {
+   private isCollapsed: boolean = true;
 }

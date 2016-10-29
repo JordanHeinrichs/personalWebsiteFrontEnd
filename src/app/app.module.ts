@@ -20,6 +20,7 @@ import { Menubar } from './menubar';
 import { NoContent } from './no-content';
 import { Projects, ProjectsUrlService } from './projects';
 import { BlogContent, BlogContentService, BlogUrlService } from './blog-content';
+import { CollapseDirective } from 'ng2-bootstrap';
 
 type StoreType = {
   restoreInputValues: () => void,
@@ -40,7 +41,8 @@ type StoreType = {
     Menubar,
     NoContent,
     Projects,
-    BlogContent
+    BlogContent,
+    CollapseDirective
   ],
   imports: [ // import Angular's modules
     BrowserModule,

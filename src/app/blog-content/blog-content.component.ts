@@ -6,6 +6,7 @@ import { BlogUrlService } from './blog-url-route.service';
 
 @Component({
    selector: 'blogcontent',
+   styleUrls: ['./blog-content.component.css'],
    templateUrl: './blog-content.template.html',
    providers: [BlogContentService]
 })

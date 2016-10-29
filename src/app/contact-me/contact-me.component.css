@@ -1,0 +1,23 @@
+ul.contactInfo {
+   text-align:left;
+}
+
+.container-fluid {
+   padding-bottom: 30px;
+}
+
+div.contactInfo {
+   width: 40rem;
+   padding-left: 5rem;
+   margin:0 auto;
+}
+
+.jumbotron.contactMe {
+   background-image: url('/assets/img/ContactMeBanner.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 500px;
+   position: relative;
+   border-radius: 0 !important;
+}

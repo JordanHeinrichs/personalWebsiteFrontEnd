@@ -4,7 +4,8 @@ import { ItemChoice } from './itemchoice';
 
 @Component({
   selector: 'item-selector',
-  templateUrl: 'itemselector.template.html',
+  styleUrls: ['itemselector.component.css'],
+  templateUrl: 'itemselector.template.html'
 })
 export class ItemSelector {
    selectedItem: ItemChoice;

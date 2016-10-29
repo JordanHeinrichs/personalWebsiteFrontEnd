@@ -1,0 +1,12 @@
+.thumbnail {
+   cursor: pointer;
+}
+
+.selectorImage {
+   max-width: 200px;
+}
+
+.itemSelector {
+   white-space: nowrap;
+   overflow-x:auto;
+}
