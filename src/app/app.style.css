@@ -28,5 +28,9 @@ body {
    .backdrop {
       width: 100%;
    }
+}
 
+* {
+   font-family: 'Cabin', sans-serif;
+   font-size: 102%;
 }
