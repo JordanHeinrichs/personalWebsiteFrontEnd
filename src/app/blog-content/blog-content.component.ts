@@ -15,7 +15,7 @@ export class BlogContent implements OnInit {
    blogHtml: string;
    blogNameParam: string;
 
-   constructor(private blogContentService: BlogContentService, 
+   constructor(private blogContentService: BlogContentService,
       private router: Router,
       private route: ActivatedRoute) {
       this.blogList = null;
