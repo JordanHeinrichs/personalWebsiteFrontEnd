@@ -24,3 +24,7 @@
 .thumbnail {
    cursor: pointer;
 }
+
+.thumbnail:hover {
+   border-color: #df5d32;
+}

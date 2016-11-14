@@ -2,6 +2,10 @@
    cursor: pointer;
 }
 
+.thumbnail:hover {
+   border-color: #df5d32;
+}
+
 .selectorImage {
    max-width: 200px;
 }

@@ -13,7 +13,20 @@ body {
 .footer img {
    padding-left: 10px;
    padding-right: 10px;
-   height: 40px;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   height: 44px;
+}
+
+.footer img:hover {
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 8px;
+   padding-right: 8px;
+}
+
+.footer a {
+   text-decoration: none;
 }
 
 .backdrop {
@@ -33,4 +46,8 @@ body {
 * {
    font-family: 'Cabin', sans-serif;
    font-size: 102%;
+}
+
+a {
+    color: #df5d32;
 }
