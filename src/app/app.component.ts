@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.style.css'
+    './app.component.css'
   ],
   templateUrl: './app.component.html'
 })
