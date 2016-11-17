@@ -3,11 +3,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ItemChoice } from './itemchoice';
 
 @Component({
-  selector: 'item-selector',
+  selector: 'app-item-selector',
   styleUrls: ['itemselector.component.css'],
   templateUrl: 'itemselector.template.html'
 })
-export class ItemSelector {
+export class ItemSelectorComponent {
    selectedItem: ItemChoice;
    @Input() choices: ItemChoice[];
    @Output() onSelected = new EventEmitter<ItemChoice>();

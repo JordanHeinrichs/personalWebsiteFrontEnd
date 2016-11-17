@@ -1,8 +1,8 @@
 import { Injectable, Inject }     from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { ItemChoice } from './../itemselector';
-import { Observable } from 'rxjs/Rx';
 import { BlogUrlService } from './blog-url-route.service';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class BlogContentService {
@@ -11,8 +11,7 @@ export class BlogContentService {
    blogList(): Promise<ItemChoice[]> {
       return this.http
          .get(this.blogUrl.blogList())
-         .toPromise()
-         .then(res => {
+         .map((res: Response) => {
             let itemChoices: ItemChoice[] = [];
             const json = res.json();
             Object.keys(json).forEach( (key) => {
@@ -23,13 +22,14 @@ export class BlogContentService {
                });
             });
             return itemChoices;
-         });
+         })
+        .toPromise();
    };
 
    blog(name: string): Promise<string> {
       return this.http
          .get(this.blogUrl.blog() + name)
-         .toPromise()
-         .then(res => res.text());
+         .map((res: Response) => res.text())
+         .toPromise();
    }
 }

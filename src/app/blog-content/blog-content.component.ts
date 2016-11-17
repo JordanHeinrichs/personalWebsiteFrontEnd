@@ -1,16 +1,15 @@
 import { Component, OnInit  } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { ItemSelector, ItemChoice } from './../itemselector';
+import { ItemChoice } from './../itemselector';
 import { BlogContentService } from './blog-content.service';
-import { BlogUrlService } from './blog-url-route.service';
 
 @Component({
-   selector: 'blogcontent',
+   selector: 'app-blog-content',
    styleUrls: ['./blog-content.component.css'],
    templateUrl: './blog-content.template.html',
    providers: [BlogContentService]
 })
-export class BlogContent implements OnInit {
+export class BlogContentComponent implements OnInit {
    blogList: ItemChoice[];
    blogHtml: string;
    blogNameParam: string;

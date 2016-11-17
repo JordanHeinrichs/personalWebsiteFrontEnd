@@ -1,18 +1,17 @@
-import { Routes, RouterModule } from '@angular/router';
-import { About } from './about';
-import { ContactMe } from './contact-me';
-import { Hobbies } from './hobbies';
-import { Home } from './home';
-import { NoContent } from './no-content';
-import { Projects } from './projects';
+import { Routes } from '@angular/router';
+import { ContactMeComponent } from './contact-me';
+import { HobbiesComponent } from './hobbies';
+import { HomeComponent } from './home';
+import { NoContentComponent } from './no-content';
+import { ProjectsComponent } from './projects';
 
-export const ROUTES: Routes = [
-   { path: '',      component: Home },
-   { path: 'home',  component: Home },
-   { path: 'projects', component: Projects },
-   { path: 'projects/:name', component: Projects },
-   { path: 'hobbies', component: Hobbies },
-   { path: 'hobbies/:name', component: Hobbies },
-   { path: 'contact-me', component: ContactMe },
-   { path: '**',    component: NoContent },
+export const routes: Routes = [
+   { path: '',      component: HomeComponent },
+   { path: 'home',  component: HomeComponent },
+   { path: 'projects', component: ProjectsComponent },
+   { path: 'projects/:name', component: ProjectsComponent },
+   { path: 'hobbies', component: HobbiesComponent },
+   { path: 'hobbies/:name', component: HobbiesComponent },
+   { path: 'contact-me', component: ContactMeComponent },
+   { path: '**',    component: NoContentComponent },
 ];
