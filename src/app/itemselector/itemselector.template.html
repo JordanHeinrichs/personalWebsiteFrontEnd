@@ -1,10 +1,10 @@
 <ul class="list-inline itemSelector">
-   <li *ngFor="let item of choices" >
-      <div class="thumbnail" (click)="selectItem(item)">
-         <img src={{item.src}} class="img-rounded img-responsive selectorImage" >
-         <div class="caption">
-            <h3>{{item.title}}</h3>
-         </div>
+  <li *ngFor="let item of choices">
+    <div class="thumbnail" (click)="selectItem(item)">
+      <img src={{item.src}} class="img-rounded img-responsive selectorImage">
+      <div class="caption">
+        <h3>{{item.title}}</h3>
       </div>
-   </li>
+    </div>
+  </li>
 </ul>

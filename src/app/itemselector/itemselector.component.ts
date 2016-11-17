@@ -8,12 +8,12 @@ import { ItemChoice } from './itemchoice';
   templateUrl: 'itemselector.template.html'
 })
 export class ItemSelectorComponent {
-   selectedItem: ItemChoice;
-   @Input() choices: ItemChoice[];
-   @Output() onSelected = new EventEmitter<ItemChoice>();
+  selectedItem: ItemChoice;
+  @Input() choices: ItemChoice[];
+  @Output() onSelected = new EventEmitter<ItemChoice>();
 
-   selectItem(item: ItemChoice): void {
-      this.selectedItem = item;
-      this.onSelected.emit(item);
-   }
+  selectItem(item: ItemChoice): void {
+    this.selectedItem = item;
+    this.onSelected.emit(item);
+  }
 }

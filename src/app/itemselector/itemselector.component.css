@@ -1,16 +1,16 @@
 .thumbnail {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 .thumbnail:hover {
-   border-color: #df5d32;
+  border-color: #df5d32;
 }
 
 .selectorImage {
-   max-width: 200px;
+  max-width: 200px;
 }
 
 .itemSelector {
-   white-space: nowrap;
-   overflow-x:auto;
+  white-space: nowrap;
+  overflow-x:auto;
 }

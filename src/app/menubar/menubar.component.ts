@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./menubar.component.css']
 })
 export class MenubarComponent {
-   private isCollapsed: boolean;
-   constructor() {
-     this.isCollapsed = true;
-   }
+  private isCollapsed: boolean;
+  constructor() {
+    this.isCollapsed = true;
+  }
 }

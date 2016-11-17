@@ -1,9 +1,9 @@
 export class BlogUrlService {
-   blogList(): string {
-      return '';
-   };
+  blogList(): string {
+    return '';
+  };
 
-   blog(): string {
-      return '';
-   }
+  blog(): string {
+    return '';
+  }
 }
