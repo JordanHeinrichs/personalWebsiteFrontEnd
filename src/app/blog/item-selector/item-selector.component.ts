@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { ItemChoice } from './itemchoice';
+import { ItemChoice } from './item-choice';
 
 @Component({
   selector: 'app-item-selector',
-  styleUrls: ['itemselector.component.css'],
-  templateUrl: 'itemselector.template.html'
+  styleUrls: ['item-selector.component.css'],
+  templateUrl: 'item-selector.component.html'
 })
 export class ItemSelectorComponent {
   selectedItem: ItemChoice;

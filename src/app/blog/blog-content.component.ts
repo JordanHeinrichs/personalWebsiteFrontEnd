@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { ItemChoice } from './../itemselector';
+
+import { ItemChoice } from './item-selector/item-choice';
 import { BlogContentService } from './blog-content.service';
 
 @Component({
   selector: 'app-blog-content',
   styleUrls: ['./blog-content.component.css'],
-  templateUrl: './blog-content.template.html',
+  templateUrl: './blog-content.component.html',
   providers: [BlogContentService]
 })
 export class BlogContentComponent implements OnInit {
@@ -36,7 +37,7 @@ export class BlogContentComponent implements OnInit {
       .then(blogList => {
         if (!this.blogNameParam) {
           // Always load the first blog if no parameter is set
-          this.onChoiceSelected(blogList[0]);
+          this.loadBlogContent(blogList[0]);
         }
       });
   }
@@ -44,6 +45,10 @@ export class BlogContentComponent implements OnInit {
   onChoiceSelected(item: ItemChoice) {
     this.blogNameParam ? this.router.navigate(['../', item.name], { relativeTo: this.route }) :
       this.router.navigate([item.name], { relativeTo: this.route });
+    this.loadBlogContent(item);
+  }
+
+  loadBlogContent(item: ItemChoice) {
     this.blogContentService.blog(item.name)
       .then(blog => this.blogHtml = blog)
       .catch((error: any) => this.blogHtml = 'Error: can not load blog.');

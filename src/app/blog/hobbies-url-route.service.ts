@@ -1,7 +1,10 @@
-import { AppSettings } from './../app.settings';
-import { BlogUrlService } from './../blog-content';
+import { Injectable } from '@angular/core';
 
-export class HobbiesUrlService implements BlogUrlService {
+import { AppSettings } from './../app.settings';
+import { BlogUrlRouteService } from './../blog/blog-url-route.service';
+
+@Injectable()
+export class HobbiesUrlRouteService implements BlogUrlRouteService {
   blogList(): string {
     return AppSettings.API_ENDPOINT + 'hobbies/';
   };

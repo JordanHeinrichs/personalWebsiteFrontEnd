@@ -1,12 +1,13 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { ItemChoice } from './../itemselector';
-import { BlogUrlService } from './blog-url-route.service';
 import 'rxjs/add/operator/toPromise';
+
+import { ItemChoice } from './item-selector/item-choice';
+import { BlogUrlRouteService } from './blog-url-route.service';
 
 @Injectable()
 export class BlogContentService {
-  constructor(private http: Http, @Inject(BlogUrlService) private blogUrl: BlogUrlService) { }
+  constructor(private http: Http, private blogUrl: BlogUrlRouteService) { }
 
   blogList(): Promise<ItemChoice[]> {
     return this.http
