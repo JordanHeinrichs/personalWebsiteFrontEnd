@@ -51,6 +51,6 @@ export class BlogContentComponent implements OnInit {
   loadBlogContent(item: ItemChoice) {
     this.blogContentService.blog(item.name)
       .then(blog => this.blogHtml = blog)
-      .catch((error: any) => this.blogHtml = 'Error: can not load blog.');
+      .catch((_: any) => this.blogHtml = 'Error: can not load blog.');
   }
 }
