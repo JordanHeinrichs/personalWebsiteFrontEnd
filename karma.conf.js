@@ -2,13 +2,14 @@
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
 module.exports = function (config) {
-  config.set({
+  let configObject = {
     basePath: '',
     frameworks: ['jasmine', 'angular-cli'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-remap-istanbul'),
+      require('karma-phantomjs-launcher'),
       require('angular-cli/plugins/karma')
     ],
     files: [
@@ -39,5 +40,10 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false
-  });
+  };
+
+  if (process.env.TRAVIS) {
+    configObject.browsers = ['PhantomJS'];
+  }
+  config.set(configObject);
 };
