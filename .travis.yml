@@ -6,7 +6,7 @@ before_script:
   - npm install -g angular-cli
   - npm install
   - ng build
-  - ng lint
+  - npm run lint
 
 script:
   - ng test --single-run
