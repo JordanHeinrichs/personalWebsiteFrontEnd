@@ -4,9 +4,11 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
+    "build-prod": "ng build --prod --aot",
+    "build-docker": "npm run build-prod && docker build -t frontend .",
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
@@ -42,7 +44,7 @@
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
-    "tslint": "^4.0.0",
+    "tslint": "^v4.0.0-dev.0 ",
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
   }
