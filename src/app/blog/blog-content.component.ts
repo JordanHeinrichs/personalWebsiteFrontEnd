@@ -11,9 +11,9 @@ import { BlogContentService } from './blog-content.service';
   providers: [BlogContentService]
 })
 export class BlogContentComponent implements OnInit {
-  blogList: ItemChoice[];
-  blogHtml: string;
-  blogNameParam: string;
+  public blogList: ItemChoice[];
+  public blogHtml: string;
+  private blogNameParam: string;
 
   constructor(private blogContentService: BlogContentService,
     private router: Router,
@@ -23,12 +23,12 @@ export class BlogContentComponent implements OnInit {
     this.blogNameParam = null;
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       this.blogNameParam = params['name'];
       if (this.blogNameParam) {
         const item: ItemChoice = { name: this.blogNameParam, title: 'default', src: null };
-        this.onChoiceSelected(item);
+        this.loadBlogContent(item);
       }
     });
 
@@ -42,13 +42,12 @@ export class BlogContentComponent implements OnInit {
       });
   }
 
-  onChoiceSelected(item: ItemChoice) {
+  public onChoiceSelected(item: ItemChoice) {
     this.blogNameParam ? this.router.navigate(['../', item.name], { relativeTo: this.route }) :
       this.router.navigate([item.name], { relativeTo: this.route });
-    this.loadBlogContent(item);
   }
 
-  loadBlogContent(item: ItemChoice) {
+  private loadBlogContent(item: ItemChoice) {
     this.blogContentService.blog(item.name)
       .then(blog => this.blogHtml = blog)
       .catch((_: any) => this.blogHtml = 'Error: can not load blog.');

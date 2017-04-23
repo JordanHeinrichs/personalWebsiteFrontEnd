@@ -11,14 +11,14 @@ describe('ContactMeComponent', () => {
   });
 
   it(`It should have title "Contact Infomation"`, async(() => {
-    let fixture = TestBed.createComponent(ContactMeComponent);
-    let compiled = fixture.debugElement.nativeElement;
+    const fixture = TestBed.createComponent(ContactMeComponent);
+    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toEqual('Contact Information');
   }));
 
   it(`Should have 4 contact links`, async(() => {
-    let fixture = TestBed.createComponent(ContactMeComponent);
-    let compiled = fixture.debugElement.nativeElement;
+    const fixture = TestBed.createComponent(ContactMeComponent);
+    const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelectorAll('ul.contactInfo li a').length).toEqual(4);
   }));
 });

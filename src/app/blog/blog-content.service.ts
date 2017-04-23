@@ -14,7 +14,7 @@ export class BlogContentService {
     return this.http
       .get(this.blogUrl.blogList())
       .map((res: Response) => {
-        let itemChoices: ItemChoice[] = [];
+        const itemChoices: ItemChoice[] = [];
         const json = res.json();
         Object.keys(json).forEach((key) => {
           itemChoices.push({

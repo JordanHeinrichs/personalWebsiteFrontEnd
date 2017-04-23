@@ -1,5 +1,5 @@
 import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
-import { CollapseModule } from 'ng2-bootstrap';
+import { CollapseModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 
 import { MenubarComponent } from './menubar.component';
@@ -8,7 +8,7 @@ import { HomeComponent } from './home.component';
 
 @NgModule({
   imports: [
-    CollapseModule,
+    CollapseModule.forRoot(),
     RouterModule
   ],
   declarations: [
