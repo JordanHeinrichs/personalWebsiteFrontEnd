@@ -11,5 +11,5 @@ before_script:
   - npm install
 
 script:
-  - npm run test -- --browsers Firefox --single-run
+  - npm run test -- --browsers Firefox --watch=false
   - npm run lint
