@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
@@ -8,14 +8,13 @@ import { BlogUrlRouteService } from './blog-url-route.service';
 
 @Injectable()
 export class BlogContentService {
-  constructor(private http: Http, private blogUrl: BlogUrlRouteService) { }
+  constructor(private http: HttpClient, private blogUrl: BlogUrlRouteService) { }
 
   blogList(): Promise<ItemChoice[]> {
     return this.http
       .get(this.blogUrl.blogList())
-      .map((res: Response) => {
+      .map((json: Object) => {
         const itemChoices: ItemChoice[] = [];
-        const json = res.json();
         Object.keys(json).forEach((key) => {
           itemChoices.push({
             name: key,
@@ -30,8 +29,7 @@ export class BlogContentService {
 
   blog(name: string): Promise<string> {
     return this.http
-      .get(this.blogUrl.blog() + name)
-      .map((res: Response) => res.text())
+      .get(this.blogUrl.blog() + name, {responseType: 'text'})
       .toPromise();
   }
 }

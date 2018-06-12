@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ContactMeModule } from './contact-me/contact-me.module';
 import { CoreModule } from './core/core.module';
@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BlogModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     ContactMeModule,
     CoreModule.forRoot()
   ],
