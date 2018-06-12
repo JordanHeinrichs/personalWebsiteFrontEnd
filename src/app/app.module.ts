@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ContactMeModule } from './contact-me/contact-me.module';
 import { CoreModule } from './core/core.module';
 import { BlogModule } from './blog/blog.module';
 
@@ -20,7 +19,6 @@ import { AppRoutingModule } from './app-routing.module';
     BlogModule,
     FormsModule,
     HttpClientModule,
-    ContactMeModule,
     CoreModule.forRoot()
   ],
   providers: [],

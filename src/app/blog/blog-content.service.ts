@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
 
 import { ItemChoice } from './item-selector/item-choice';
 import { BlogUrlRouteService } from './blog-url-route.service';
